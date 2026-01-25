@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Multi-Contact Robot Door Opening</title>
+  <style>
+    :root{
+      --maxw: 980px;
+      --fg: #111;
+      --muted: #555;
+      --line: #e7e7e7;
+      --bg: #ffffff;
+      --card: #fafafa;
+      --chipbg: #fff;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0; background:var(--bg); color:var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    a{ color:inherit; text-decoration:none; border-bottom:1px solid #cfcfcf; }
+    a:hover{ border-bottom-color:#111; }
+    .container{ max-width:var(--maxw); margin:0 auto; padding:28px 18px; }
+    .topbar{
+      display:flex; justify-content:space-between; align-items:center;
+      gap:12px; flex-wrap:wrap; padding:10px 0 18px;
+      border-bottom:1px solid var(--line);
+    }
+    .brand{ font-weight:700; letter-spacing:0.2px; }
+    .nav a{ margin-left:14px; border-bottom:none; color:var(--muted); }
+    .nav a:hover{ color:var(--fg); }
+    h1{ margin:22px 0 8px; font-size:34px; }
+    h2{ margin:28px 0 10px; font-size:22px; }
+    p{ margin:10px 0; line-height:1.55; }
+    .small{ color:var(--muted); font-size:14px; }
+    .hero{
+      display:grid; gap:14px; padding:18px 0 6px;
+    }
+    .grid{
+      display:grid; grid-template-columns:repeat(12, 1fr); gap:16px;
+    }
+    .card{
+      grid-column: span 12;
+      border:1px solid var(--line);
+      background:var(--card);
+      border-radius:14px;
+      padding:16px;
+    }
+    @media (min-width: 860px){
+      .card{ grid-column: span 6; }
+    }
+    .title{ font-weight:700; font-size:18px; margin:0 0 6px; }
+    .desc{ margin:0 0 10px; color:var(--muted); }
+    .chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
+    .chip{
+      display:inline-block;
+      padding:7px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:var(--chipbg);
+      font-size:14px;
+    }
+    .chip a{ border-bottom:none; }
+    .chip:hover{ border-color:#bdbdbd; }
+    .footer{
+      margin-top:28px; padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted); font-size:13px;
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+    }
+    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">Multi-Contact Robot Door Opening</div>
+      <div class="nav">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <h1>Multi-contact door opening with RGB-D, force-torque, and tactile sensing</h1>
+      <p class="small">
+        Landing page for three related projects from the thesis
+        <span class="mono">“Multi-contact Door Opening by a Robotic Arm Using an RGB-D Camera, a Force-Torque Sensor and a Tactile Sensor”</span>.
+      </p>
+      <p class="small">
+        Replace the placeholder links below with your PDF/code/data/video. You can also add teaser images later.
+      </p>
+    </div>
+
+    <h2 id="projects">Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="title">1) Door & drawer detection from RGB-D human demonstrations</div>
+        <p class="desc">
+          Detect doors and drawers based on a sequence of RGB-D images captured during human demonstrations.
+        </p>
+        <div class="chips">
+          <span class="chip"><a href="projects/perception/">Project page</a></span>
+          <span class="chip"><a href="#">Paper (PDF)</a></span>
+          <span class="chip"><a href="#">Code</a></span>
+          <span class="chip"><a href="#">Data</a></span>
+          <span class="chip"><a href="#">Video</a></span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="title">2) Multi-contact robot arm path planning for door opening</div>
+        <p class="desc">
+          Path planning method that leverages multiple contacts to robustly open doors with a robotic arm.
+        </p>
+        <div class="chips">
+          <span class="chip"><a href="projects/planning/">Project page</a></span>
+          <span class="chip"><a href="#">Paper (PDF)</a></span>
+          <span class="chip"><a href="#">Code</a></span>
+          <span class="chip"><a href="#">Data</a></span>
+          <span class="chip"><a href="#">Video</a></span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="title">3) RGB-D calibration for door opening using force-torque + tactile</div>
+        <p class="desc">
+          Method for opening doors based on RGB-D camera calibration refined using force-torque and tactile signals.
+        </p>
+        <div class="chips">
+          <span class="chip"><a href="projects/calibration/">Project page</a></span>
+          <span class="chip"><a href="#">Paper (PDF)</a></span>
+          <span class="chip"><a href="#">Code</a></span>
+          <span class="chip"><a href="#">Data</a></span>
+          <span class="chip"><a href="#">Video</a></span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="title">Thesis</div>
+        <p class="desc">
+          If you want, you can link the full thesis PDF here and keep the three pages as “paper-style” project pages.
+        </p>
+        <div class="chips">
+          <span class="chip"><a href="#">Thesis (PDF)</a></span>
+          <span class="chip"><a href="#">BibTeX</a></span>
+        </div>
+      </div>
+    </div>
+
+    <h2 id="about">About</h2>
+    <p class="small">
+      Add a short paragraph about the overall system (robot platform, sensors, main pipeline) and a sentence per contribution.
+    </p>
+
+    <div class="footer" id="contact">
+      <div>
+        Contact: <a href="mailto:valentin.simundic@ferit.hr">valentin.simundic@ferit.hr</a>
+      </div>
+      <div>
+        GitHub org: <a href="https://github.com/multicontact-door">Multi-Contact Robot Door Opening</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
