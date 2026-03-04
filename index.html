@@ -33,6 +33,7 @@
     h1{ margin:22px 0 8px; font-size:34px; }
     h2{ margin:28px 0 10px; font-size:22px; }
     p{ margin:10px 0; line-height:1.55; }
+    ul { margin: 10px 0; padding-left: 20px; line-height: 1.55; color: var(--muted); font-size: 14px; }
     .small{ color:var(--muted); font-size:14px; }
     .hero{
       display:grid; gap:14px; padding:18px 0 6px;
@@ -76,7 +77,7 @@
 <body>
   <div class="container">
     <div class="topbar">
-      <div class="brand">Multi-Contact Robot Door Opening</div>
+      <div class="brand">Valentin Šimundić</div>
       <div class="nav">
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
@@ -87,74 +88,76 @@
     <div class="hero">
       <h1>Multi-contact door opening with RGB-D, force-torque, and tactile sensing</h1>
       <p class="small">
-        Landing page for three related projects from the thesis
-        <span class="mono">“Multi-contact Door Opening by a Robotic Arm Using an RGB-D Camera, a Force-Torque Sensor and a Tactile Sensor”</span>.
+        Landing page for the components and publications developed as part of the doctoral dissertation:
+        <br><br>
+        <span class="mono">“Multi-contact Door Opening by a Robotic Arm Using an RGB-D Camera, a Force-Torque Sensor and a Tactile Sensor”</span>
       </p>
       <p class="small">
-        Replace the placeholder links below with your PDF/code/data/video. You can also add teaser images later.
+        This research addresses the challenges of autonomous service robots interacting with articulated objects (doors and drawers) in unstructured, human-centered environments. It proposes an integrated pipeline for detection from human demonstrations, multi-contact path planning for handleless cabinet doors, and multimodal failure detection and recovery.
       </p>
     </div>
 
-    <h2 id="projects">Projects</h2>
+    <h2 id="projects">Publications & Projects</h2>
     <div class="grid">
       <div class="card">
         <div class="title">1) Door & drawer detection from RGB-D human demonstrations</div>
         <p class="desc">
-          Detect doors and drawers based on a sequence of RGB-D images captured during human demonstrations.
+          Detects doors and drawers based on a sequence of RGB-D images captured during human demonstrations. Reconstructs articulated object models and inserts them into an environment map, enabling robust state estimation from a single RGB-D observation.
         </p>
         <div class="chips">
           <span class="chip"><a href="projects/perception/">Project page</a></span>
-          <span class="chip"><a href="#">Paper (PDF)</a></span>
-          <span class="chip"><a href="#">Code</a></span>
-          <span class="chip"><a href="#">Data</a></span>
-          <span class="chip"><a href="#">Video</a></span>
+          <span class="chip"><a href="assets/cupec2023teaching.pdf">Paper (PDF)</a></span>
+          <span class="chip"><a href="https://github.com/multi-contact-door/door-drawer-detector">Code</a></span>
         </div>
       </div>
 
       <div class="card">
         <div class="title">2) Multi-contact robot arm path planning for door opening</div>
         <p class="desc">
-          Path planning method that leverages multiple contacts to robustly open doors with a robotic arm.
+          A path planning method that leverages multiple contacts to robustly open handleless doors with a robotic arm. Searches over feasible end-effector configurations distributed over the door surface to generate collision-free and kinematically feasible opening paths.
         </p>
         <div class="chips">
           <span class="chip"><a href="projects/planning/">Project page</a></span>
-          <span class="chip"><a href="#">Paper (PDF)</a></span>
-          <span class="chip"><a href="#">Code</a></span>
-          <span class="chip"><a href="#">Data</a></span>
-          <span class="chip"><a href="#">Video</a></span>
+          <span class="chip"><a href="assets/simundic2026multi-contact.pdf">Paper (PDF)</a></span>
+          <span class="chip"><a href="https://github.com/multi-contact-door/multi-contact-planner">Code</a></span>
         </div>
       </div>
 
       <div class="card">
-        <div class="title">3) RGB-D calibration for door opening using force-torque + tactile</div>
+        <div class="title">3) Visuo-Force-Tactile Integration for Door Opening</div>
         <p class="desc">
-          Method for opening doors based on RGB-D camera calibration refined using force-torque and tactile signals.
+          A door-opening framework that integrates visual, force, and tactile feedback to detect missed contacts, contact loss, and collisions. Features a correction method that updates camera parameters based on failed attempts to improve execution reliability over time.
         </p>
         <div class="chips">
           <span class="chip"><a href="projects/calibration/">Project page</a></span>
-          <span class="chip"><a href="#">Paper (PDF)</a></span>
-          <span class="chip"><a href="#">Code</a></span>
-          <span class="chip"><a href="#">Data</a></span>
-          <span class="chip"><a href="#">Video</a></span>
+          <span class="chip"><a href="assets/simundic2026framework.pdf">Paper (PDF)</a></span>
+          <span class="chip"><a href="https://github.com/multi-contact-door/visuo-force-tactile-framework">Code</a></span>
         </div>
       </div>
 
       <div class="card">
-        <div class="title">Thesis</div>
+        <div class="title">Doctoral Dissertation</div>
         <p class="desc">
-          If you want, you can link the full thesis PDF here and keep the three pages as “paper-style” project pages.
+          The complete, integrated thesis combining perception, multi-contact planning, and visuo-force-tactile execution frameworks for robotic manipulation of articulated furniture.
         </p>
         <div class="chips">
-          <span class="chip"><a href="#">Thesis (PDF)</a></span>
-          <span class="chip"><a href="#">BibTeX</a></span>
+          <span class="chip"><a href="assets/Simundic_Thesis.pdf">Thesis (PDF)</a></span>
         </div>
       </div>
     </div>
 
-    <h2 id="about">About</h2>
+    <h2 id="about">System Overview & Contributions</h2>
     <p class="small">
-      Add a short paragraph about the overall system (robot platform, sensors, main pipeline) and a sentence per contribution.
+      The experiments were validated across two primary robot platforms. Perception tasks utilized the <strong>TIAGo robot mobile platform</strong> equipped with a 7-DOF arm and an <strong>Intel RealSense LiDAR Camera L515</strong>. Manipulation and multimodal correction frameworks were executed using a <strong>Universal Robots UR5</strong> manipulator equipped with a <strong>Robotiq 3-Finger Gripper</strong>, a <strong>Robotiq FT300-S force-torque sensor</strong>, and a <strong>XELA uSPa 44 tactile sensor</strong>.
     </p>
+    <p class="small">
+      This thesis introduces three primary original contributions to the scientific literature:
+    </p>
+    <ul>
+        <li>A method for detecting doors and drawers based on a sequence of RGB-D images of human demonstrations.</li>
+        <li>A robot arm path planning method for multi-contact door opening.</li>
+        <li>A method for opening doors with a robot arm based on RGB-D camera calibration using force-torque and tactile sensor data.</li>
+    </ul>
 
     <div class="footer" id="contact">
       <div>
