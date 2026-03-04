@@ -32,9 +32,9 @@
     .nav a:hover{ color:var(--fg); }
     h1{ margin:22px 0 8px; font-size:34px; }
     h2{ margin:28px 0 10px; font-size:22px; }
-    p{ margin:10px 0; line-height:1.55; }
-    ul { margin: 10px 0; padding-left: 20px; line-height: 1.55; color: var(--muted); font-size: 14px; }
-    .small{ color:var(--muted); font-size:14px; }
+    p{ margin:10px 0; line-height:1.6; font-size: 16px; }
+    ul { margin: 10px 0; padding-left: 20px; line-height: 1.6; color: var(--muted); font-size: 16px; }
+    .small{ color:var(--muted); font-size:16px; }
     .hero{
       display:grid; gap:14px; padding:18px 0 6px;
     }
@@ -46,13 +46,10 @@
       border:1px solid var(--line);
       background:var(--card);
       border-radius:14px;
-      padding:16px;
+      padding:20px;
     }
-    @media (min-width: 860px){
-      .card{ grid-column: span 6; }
-    }
-    .title{ font-weight:700; font-size:18px; margin:0 0 6px; }
-    .desc{ margin:0 0 10px; color:var(--muted); }
+    .title{ font-weight:700; font-size:22px; margin:0 0 10px; }
+    .desc{ margin:0 0 14px; color:var(--muted); font-size:17px; line-height:1.6; }
     .chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
     .chip{
       display:inline-block;
@@ -80,13 +77,12 @@
       <div class="brand">Valentin Šimundić</div>
       <div class="nav">
         <a href="#projects">Projects</a>
-        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
 
     <div class="hero">
-      <h1>Multi-contact door opening with RGB-D, force-torque, and tactile sensing</h1>
+      <h1>Multi-Contact Door Opening With RGB-D, Force-Torque, and Tactile Sensing</h1>
       <p class="small">
         Landing page for the components and publications developed as part of the doctoral dissertation:
         <br><br>
@@ -97,15 +93,35 @@
       </p>
     </div>
 
+    <h2>Doctoral Dissertation</h2>
+    <div class="grid" style="margin-bottom: 20px;">
+      <div class="card">
+        <p class="desc">
+          The complete thesis combining perception, multi-contact planning, and visuo-force-tactile execution frameworks for robotic manipulation of articulated furniture.
+        </p>
+        <p class="desc" style="margin-top: 15px;">
+          <strong>Contributions:</strong>
+        </p>
+        <ul style="margin-top: 5px;">
+          <li>A method for detecting doors and drawers based on a sequence of RGB-D images of human demonstrations.</li>
+          <li>A robot arm path planning method for multi-contact door opening.</li>
+          <li>A method for opening doors with a robot arm based on RGB-D camera calibration using force-torque and tactile sensor data.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip"><a href="https://drive.google.com/file/d/1RWEZtpl0l62sKC43s7KgfT1oNyOMqPBj/view?usp=drive_link">Thesis (PDF - Early Access)</a></span>
+        </div>
+      </div>
+    </div>
+
     <h2 id="projects">Publications & Projects</h2>
     <div class="grid">
       <div class="card">
         <div class="title">1) Door & Drawer Detection From RGB-D Human Demonstrations</div>
+        <img src="figs/door-detection.gif" style="width:75%; max-width:600px; display:block; border-radius:8px; margin: 15px auto;" alt="Door Detection Animation" />
         <p class="desc">
           Detects doors and drawers based on a sequence of RGB-D images captured during human demonstrations. Reconstructs articulated object models and inserts them into an environment map, enabling robust state estimation from a single RGB-D observation.
         </p>
         <div class="chips">
-          <span class="chip"><a href="projects/perception/">Project page</a></span>
           <span class="chip"><a href="https://ieeexplore.ieee.org/document/10309560">Paper (IEEE Xplore)</a></span>
           <span class="chip"><a href="https://github.com/vsimundic/ur5-door-interaction#door-and-drawer-detection">Code</a></span>
         </div>
@@ -113,11 +129,11 @@
 
       <div class="card">
         <div class="title">2) Multi-Contact Robot Arm Path Planning for Door Opening</div>
+        <img src="figs/multi-contact-gazebo-3x.gif" style="width:75%; max-width:600px; display:block; border-radius:8px; margin: 15px auto;" alt="Multi-Contact Path Planning Animation" />
         <p class="desc">
           A path planning method that leverages multiple contacts to robustly open handleless doors with a robotic arm. Searches over feasible end-effector configurations distributed over the door surface to generate collision-free and kinematically feasible opening paths.
         </p>
         <div class="chips">
-          <span class="chip"><a href="projects/planning/">Project page</a></span>
           <span class="chip"><a href="https://ieeexplore.ieee.org/document/11372945">Paper (IEEE Xplore - Open Access)</a></span>
           <span class="chip"><a href="https://github.com/vsimundic/ur5-door-interaction#multi-contact-path-planning-for-door-opening">Code</a></span>
         </div>
@@ -125,46 +141,30 @@
 
       <div class="card">
         <div class="title">3) Visuo-Force-Tactile Integration for Door Opening</div>
+        <img src="figs/correction.gif" style="width:75%; max-width:600px; display:block; border-radius:8px; margin: 15px auto;" alt="Visuo-Force-Tactile Correction Animation" />
         <p class="desc">
           A door-opening framework that integrates visual, force, and tactile feedback to detect missed contacts, contact loss, and collisions. Features a correction method that updates camera parameters based on failed attempts to improve execution reliability over time.
         </p>
         <div class="chips">
-          <span class="chip"><a href="projects/calibration/">Project page</a></span>
           <span class="chip"><a href="https://ieeexplore.ieee.org/document/11357560">Paper (IEEE Xplore - Open Access)</a></span>
           <span class="chip"><a href="https://github.com/vsimundic/ur5-door-interaction#failure-recovery-in-door-opening">Code</a></span>
         </div>
       </div>
-
-      <div class="card">
-        <div class="title">Doctoral Dissertation</div>
-        <p class="desc">
-          The complete thesis combining perception, multi-contact planning, and visuo-force-tactile execution frameworks for robotic manipulation of articulated furniture.
-        </p>
-        <div class="chips">
-          <span class="chip"><a href="https://drive.google.com/file/d/1RWEZtpl0l62sKC43s7KgfT1oNyOMqPBj/view?usp=drive_link">Thesis (PDF - Early Access)</a></span>
-        </div>
-      </div>
     </div>
 
-    <h2 id="about">System Overview & Contributions</h2>
-    <p class="small">
-      The experiments were validated across two primary robot platforms. Perception tasks utilized the <strong>TIAGo robot mobile platform</strong> equipped with a 7-DOF arm and an <strong>Intel RealSense LiDAR Camera L515</strong>. Manipulation and multimodal correction frameworks were executed using a <strong>Universal Robots UR5</strong> manipulator equipped with a <strong>Robotiq 3-Finger Gripper</strong>, a <strong>Robotiq FT300-S force-torque sensor</strong>, and a <strong>XELA uSPa 44 tactile sensor</strong>.
-    </p>
-    <p class="small">
-      This thesis introduces three primary original contributions to the scientific literature:
-    </p>
-    <ul>
-        <li>A method for detecting doors and drawers based on a sequence of RGB-D images of human demonstrations.</li>
-        <li>A robot arm path planning method for multi-contact door opening.</li>
-        <li>A method for opening doors with a robot arm based on RGB-D camera calibration using force-torque and tactile sensor data.</li>
-    </ul>
-
-    <div class="footer" id="contact">
-      <div>
-        Contact: <a href="mailto:valentin.simundic@ferit.hr">valentin.simundic@ferit.hr</a>
+    <div class="footer" id="contact" style="justify-content: center; flex-direction: column; text-align: center; padding: 40px 0; margin-top: 40px;">
+      <h2 style="margin: 0 0 15px;">Contact</h2>
+      <div style="font-size: 18px;">
+        <a href="mailto:valentin.simundic@ferit.hr" style="display: inline-block; padding: 12px 24px; background: var(--fg); color: var(--bg); border-radius: 8px; font-weight: bold; border: none;">✉️ valentin.simundic@ferit.hr</a>
       </div>
-      <div>
-        GitHub org: <a href="https://github.com/multicontact-door">Multi-Contact Robot Door Opening</a>
+      
+      <div style="margin-top: 30px; font-size: 15px; color: var(--muted); line-height: 1.5;">
+        <strong>Josip Juraj Strossmayer University of Osijek</strong><br>
+        <a href="https://www.ferit.unios.hr/about-ferit/general" target="_blank" style="border-bottom: 1px dotted var(--muted); color: inherit;">Faculty of Electrical Engineering, Computer Science and Information Technology Osijek</a>
+      </div>
+      <div style="display: flex; justify-content: center; gap: 30px; margin-top: 20px; align-items: center;">
+        <img src="figs/unios_logo.png" style="height: 65px; width: auto;" alt="UNIOS Logo">
+        <img src="figs/ferit_logo.png" style="height: 65px; width: auto;" alt="FERIT Logo">
       </div>
     </div>
   </div>
